@@ -52,6 +52,19 @@ public class AddressBook {
         //get method() to take input.
         System.out.println("\n Person at West Bengal is:"+mydict_1.get("West Bengal"));
         System.out.println("\n Person at Mumbai is:"+mydict_1.get("Mumbai"));
+
+        //Count City using JavaStream.
+        List<String> strList_1 = Arrays.asList("Kolkata", "", "Mumbai", "", "Delhi", "Tamilnadu");
+        long count = strList_1.stream()
+                .filter(x -> x.isEmpty())
+                .count();
+
+        //Count States using JavaStream.
+        List<String> strList_2 = Arrays.asList("West Bengal", "", "Maharashtra", "Punjab", "", "Kerala");
+        long count = strList_2.stream()
+                .filter(x -> x.isEmpty())
+                .count();
+
     }
     public static void personDetail()
     {
@@ -176,4 +189,5 @@ public class AddressBook {
         } // end else
         return super.equals(obj);
     }
+
 }
